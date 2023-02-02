@@ -12,8 +12,7 @@ const getImages = () => {
             {
                 throw Error('item does not exist')
             }
-            images.value = await data.jfif()
-            
+            images.value = await data.json()
         } catch (err) {
             error.value = err.message
             console.log(error.value)

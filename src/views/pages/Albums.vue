@@ -11,6 +11,7 @@ export default {
         //fetching the albums
 
         albumStore.getAlbums()
+        
 
         return {albumStore}
     }
@@ -19,13 +20,21 @@ export default {
 <template>
     <!-- error -->
     <div v-if="albumStore.error">{{ albumStore.error }}</div>
-
+    <!-- add albums -->
+    <div class="mt-20 text-center">
+        <AddAlbum  />
+    </div>
      <!-- Album details -->
-     <div class="mt-20">Albums[{{ albumStore.albumsTotals }}]</div>
+     <div class="mt-10">Albums[{{ albumStore.albumsTotals }}]</div>
          <!-- loading -->
     <div v-if="albumStore.loading">loading album...</div>
      <div class="" v-for="album in albumStore.albums" :key="album.id">
         <AlbumDetails :album="album" />
+     </div>
+     <div>
+        <button @click="previousPage">Prev</button>
+        <span>{{ currentPage }} / {{ totalPages }}</span>
+        <button @click="nextPage">Next</button>
      </div>
 
 </template>

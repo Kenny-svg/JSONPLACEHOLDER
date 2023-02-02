@@ -4,12 +4,13 @@ export const useAlbumStore = defineStore('albumStore', {
     state: () => ({
         albums: [],
         loading: false,
-        error: null
+        error: null,
+        newNum: 0
     }),
     getters: {
         albumsTotals: (state) => {
             return state.albums.length
-        }
+        },
     },
     actions: {
         async getAlbums() {
@@ -30,13 +31,20 @@ export const useAlbumStore = defineStore('albumStore', {
             }
 
         },
-        addAlbums(albums) {
-            this.albums = this.albums.push(albums)
+        addAlbums(album) {
+            this.albums = [...this.albums, {...album, id: this.albums.length + 1}]
         },
         deleteAlbulms(id){
             this.albums = this.albums.filter(a => {
                return a.id !==id
             })
+        },
+        editAlbums(id) {
+            this.albums = this.albums.find(e => {
+                return id == e.id
+            })
+            console.log(this.albums)
+
         }
     }
 })
