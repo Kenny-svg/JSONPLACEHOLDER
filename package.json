@@ -16,6 +16,7 @@
     "jw-vue-pagination": "^1.0.3",
     "pinia": "^2.0.29",
     "tailwindcss": "^3.2.4",
+    "v-pagination-3": "^0.1.7",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
     "vuex": "^4.0.2"

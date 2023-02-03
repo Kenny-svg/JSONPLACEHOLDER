@@ -31,10 +31,10 @@ export const useCommentStore = defineStore('commentStore', {
             }
  
         },
-        addAlbums(comments) {
-            this.comments = this.comments.push(comments)
+        addComments(comment) {
+            this.comments = [...this.comments, {...comment, id: this.comments.length + 1}]
         },
-        deleteAlbulms(id){
+        deleteComments(id){
             this.comments = this.comments.filter(c => {
                return c.id !==id
             })

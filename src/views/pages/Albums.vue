@@ -25,16 +25,13 @@ export default {
         <AddAlbum  />
     </div>
      <!-- Album details -->
-     <div class="mt-10">Albums[{{ albumStore.albumsTotals }}]</div>
+     <div class="mt-10 text-center font-bold text-3xl mb-5">Albums<sub>[{{ albumStore.albumsTotals }}]</sub></div>
+     
          <!-- loading -->
     <div v-if="albumStore.loading">loading album...</div>
      <div class="" v-for="album in albumStore.albums" :key="album.id">
         <AlbumDetails :album="album" />
      </div>
-     <div>
-        <button @click="previousPage">Prev</button>
-        <span>{{ currentPage }} / {{ totalPages }}</span>
-        <button @click="nextPage">Next</button>
-     </div>
+
 
 </template>

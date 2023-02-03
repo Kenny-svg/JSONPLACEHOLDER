@@ -1,11 +1,12 @@
 import {defineStore} from 'pinia'
-
+import axios from 'axios'
 export const useAlbumStore = defineStore('albumStore', {
     state: () => ({
         albums: [],
         loading: false,
         error: null,
-        newNum: 0
+        newNum: 0,
+        title: '',
     }),
     getters: {
         albumsTotals: (state) => {
@@ -39,12 +40,5 @@ export const useAlbumStore = defineStore('albumStore', {
                return a.id !==id
             })
         },
-        editAlbums(id) {
-            this.albums = this.albums.find(e => {
-                return id == e.id
-            })
-            console.log(this.albums)
-
-        }
     }
 })

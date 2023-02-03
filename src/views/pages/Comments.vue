@@ -2,9 +2,10 @@
 // import AddComment from '../../components/comment/AddComment.vue';
 import CommentDetails from '../../components/comment/CommentDetails.vue';
 import {useCommentStore } from '../../store/CommentStore'
+import AddComment from '../../components/comment/AddComment.vue';
 
 export default {
-    components: {CommentDetails},
+    components: {AddComment,CommentDetails},
     setup() {
         const commentStore = useCommentStore()
 
@@ -19,6 +20,11 @@ export default {
 <template>
     <!-- error -->
     <div v-if="commentStore.error">{{ commentStore.error }}</div>
+    <!-- add comments -->
+    <div class="mt-20 text-center">
+    <AddComment />
+
+    </div>
     <!-- loading -->
     <div v-if="commentStore.loading">loading comment...</div>
      <!-- comment details -->
