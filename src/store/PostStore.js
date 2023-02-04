@@ -30,8 +30,8 @@ export const usePostStore = defineStore('postStore', {
                 console.log(this.error)
             }
         },
-        addPosts(posts) {
-            this.posts = this.posts.push(posts)
+        addPosts(post) {
+            this.posts = [...this.posts, {...post, id: this.posts.length + 1}]
         },
         deletePosts(id) {
             this.posts = this.posts.filter(p => {

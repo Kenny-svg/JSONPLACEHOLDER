@@ -28,7 +28,7 @@ export default {
     <!-- loading -->
     <div v-if="commentStore.loading">loading comment...</div>
      <!-- comment details -->
-     <div class="mt-20">comments[{{ commentStore.commentsTotals }}]</div>
+     <div class="mt-10 text-center font-bold text-3xl mb-5">comments[{{ commentStore.commentsTotals }}]</div>
      <div class="" v-for="comment in commentStore.comments" :key="comment.id">
         <CommentDetails :comment="comment" />
      </div>

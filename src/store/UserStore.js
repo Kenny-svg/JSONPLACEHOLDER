@@ -30,10 +30,10 @@ export const useUserStore = defineStore('userStore', {
                 console.log(this.error)
             }
         },
-        addUsers(users) {
-            this.users = this.users.push(users)
+        addUsers(user) {
+            this.users = [...this.users, {...user, id: this.users.length + 1}]
         },
-        deleteusers(id) {
+        deleteUsers(id) {
             this.users = this.users.filter(u => {
                 return u.id !== id
             })

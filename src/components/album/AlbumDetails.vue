@@ -1,6 +1,7 @@
 <template>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full" >
-       <div v-for="item in currentPage" :key="item.id" class=" flex bg-white shadow-2xl border-2">
+    <v-paginator :page="page" @update="updateRes">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full" >
+       <div class=" flex bg-white shadow-2xl border-2">
         <div class=" text-center mx-auto">
             <p class="text-center">{{ album.id }}</p>
             <!-- <img :src="image" /> -->
@@ -20,9 +21,10 @@
         </div>
 
        </div>
-    </div>
-    <button @click="previousPage">Previous</button>
-            <button @click="nextPage">Next</button>
+    </div>    
+    </v-paginator>
+
+
     <div v-if="showModal">
         <Modal
         
@@ -51,38 +53,27 @@ import axios from 'axios';
 import { useAlbumStore } from '../../store/AlbumStore';
 import Modal from '../utilities/Modal.vue';
 import { reactive, computed } from 'vue';
-import Pagination from 'v-pagination-3';
+import {VuePaginator} from 'vuejs-paginator'
 
 
 export default {
     props: ['album'],
-    components: {Modal, Pagination},
+    components: {Modal, Vpaginator: VuePaginator },
     setup() {
-        //pagination
-        const  currentPage = ref(1)
-        const  itemsPerPage = ref(10)
+       
 
         //from store
         const albumStore = useAlbumStore()
+         //pagination
+        const page = albumStore.albums;
+
         //random images
         const images = ref([])
         //pagination
-        const totalPages = computed(() => Math.ceil(albumStore.albums.length / itemsPerPage.value));    
-        const currentPageData = computed(() => {
-        const start = (currentPage.value - 1) * itemsPerPage.value;
-        return albumStore.albums.slice(start, start + itemsPerPage.value);
-    });
 
-    function previousPage() {
-      if (currentPage.value > 1) {
-        currentPage.value--;
-      }
-    }
-    function nextPage() {
-      if (currentPage.value < this.totalPages) {
-        currentPage.value++;
-      }
-    }
+        const  updateRes = (page) => {
+            albumStore.albums = page
+        }
         onMounted(() => {
             for (let i = 0; i < 1; i++) {
              images.value.push( `https://picsum.photos/200/300?random=${Math.floor(Math.random() * 1000)}`)
@@ -126,7 +117,7 @@ export default {
          }
         }
         
-        return {totalPages, albumStore, editAlbums, toggleModal,images, header, showModal,  currentPageData,  previousPage, nextPage, currentPage, itemsPerPage}
+        return { albumStore, editAlbums, toggleModal,images, header, showModal, updateRes, page}
         
         }
 

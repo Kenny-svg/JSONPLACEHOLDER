@@ -30,8 +30,8 @@ export const usePhotoStore = defineStore('photoStore', {
             }
 
         },
-        addPhotos(photos) {
-            this.photos = this.photos.push(photos)
+        addPhotos(photo) {
+            this.photos = [...this.photos, {...photo, id: this.photos.length + 1}]
         },
         deletePhotos(id){
             this.photos = this.photos.filter(p => {

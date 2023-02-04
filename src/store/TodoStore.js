@@ -30,8 +30,8 @@ export const useTodoStore = defineStore('todoStore', {
                 console.log(this.error)
             }
         },
-        addTodos(todos) {
-            this.todos = this.todos.push(todos)
+        addTodos(todo) {
+            this.todos = [...this.todos, {...todo, id: this.todos.length + 1}]
         },
         deleteTodos(id) {
             this.todos = this.todos.filter(t => {
