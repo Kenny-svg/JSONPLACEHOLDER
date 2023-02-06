@@ -90,7 +90,7 @@ export default {
   <div class="w-32 h-10 bg-gray-300 rounded-lg animate-pulse"></div>
 </div>
 </div>
-  <div v-else class="grid grid-cols-1 md:grid-cols-4 gap-4 md:w-11/12 mx-auto">
+  <div v-else class="grid grid-cols-1 md:grid-cols-4 gap-4 md:w-11/12 mx-auto w-11/12">
     <div v-for="album in paginatedAlbums" :key="album.id">
     <AlbumDetails :album="album" />
   </div>
