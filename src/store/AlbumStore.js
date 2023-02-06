@@ -1,4 +1,5 @@
 import {defineStore} from 'pinia'
+import { computed } from 'vue';
 import axios from 'axios'
 export const useAlbumStore = defineStore('albumStore', {
     state: () => ({
@@ -12,6 +13,7 @@ export const useAlbumStore = defineStore('albumStore', {
         albumsTotals: (state) => {
             return state.albums.length
         },
+
     },
     actions: {
         async getAlbums() {
@@ -40,5 +42,7 @@ export const useAlbumStore = defineStore('albumStore', {
                return a.id !==id
             })
         },
+
+        
     }
 })

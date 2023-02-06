@@ -1,6 +1,6 @@
 <template>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4" >
-       <div class="bg-white shadow-2xl border-2 text-center">
+    <div class="" >
+       <div class="bg-white shadow-2xl border-2 text-center p-2">
             <p>{{ comment.id }}</p>
             <h3>{{ comment.body }}</h3>
 
@@ -23,13 +23,13 @@
             :header="header"
     >
         <template v-slot:form>
-            <form @submit.prevent="editComments">
+            <form class="text-center" @submit.prevent="editComments">
                 <input
                 
                 v-model="comment.name"
-                class="border-2" type="text" placeholder="edit Comment"/>
+                class="border-2 p-2 rounded-lg mt-2" type="text" placeholder="edit Comment"/><br />
 
-                <button class="border-2">edit Comment</button>
+                <button class="border-2  mt-5 p-2 rounded-lg text-white bg-red-700">edit Comment</button>
             </form>
         </template>
     </Modal>  

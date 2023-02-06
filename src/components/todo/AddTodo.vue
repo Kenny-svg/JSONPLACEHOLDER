@@ -8,10 +8,11 @@
             <form @submit.prevent="handleSubmit">
                 <input
                 v-model="newTodo"
-                class="border-2" type="text" placeholder="add new todo"/>
+                class="border-2 rounded-lg mt-2" type="text" placeholder="add new todo"/>
+                <br />
 
 
-                <button class="border-2 ">Add new todo</button>
+                <button class="border-2  mt-5 p-2 rounded-lg text-white bg-red-700 ">Add new todo</button>
             </form>
         </template>
     </Modal>   

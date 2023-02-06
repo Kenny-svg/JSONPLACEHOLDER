@@ -12,7 +12,7 @@ export const usePhotoStore = defineStore('photoStore', {
         }
     },
     actions: {
-        async getphotos() {
+        async getPhotos() {
             this.loading = true
             
             //fetching the jsonplaceholder server

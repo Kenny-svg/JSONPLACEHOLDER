@@ -1,5 +1,5 @@
 <template>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4" >
+<div class="" >
        <div class="bg-white shadow-2xl border-2">
           
             
@@ -23,13 +23,13 @@
             :header="header"
     >
         <template v-slot:form>
-            <form @submit.prevent="editPosts">
+            <form class="text-center" @submit.prevent="editPosts">
                 <input
                 
                 v-model="post.body"
-                class="border-2" type="text" placeholder="edit post"/>
+                class="border-2 p-2 rounded-lg mt-2" type="text" placeholder="edit post"/><br />
 
-                <button class="border-2">edit post</button>
+                <button class="border-2  mt-5 p-2 rounded-lg text-white bg-red-700">edit post</button>
             </form>
         </template>
     </Modal>  

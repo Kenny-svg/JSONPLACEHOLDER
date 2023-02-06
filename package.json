@@ -13,14 +13,13 @@
     "axios": "^1.2.6",
     "bootstrap-icons": "^1.10.3",
     "flowbite": "^1.6.3",
-    "jw-vue-pagination": "^1.0.3",
+    "jsonplaceholder": "^0.3.3",
+
     "pinia": "^2.0.29",
     "tailwindcss": "^3.2.4",
-    "v-pagination-3": "^0.1.7",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6",
-    "vuejs-paginator": "^2.0.2",
-    "vuex": "^4.0.2"
+    "vue-router": "^4.1.6"
+
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

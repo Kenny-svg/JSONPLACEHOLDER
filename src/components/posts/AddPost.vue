@@ -5,12 +5,12 @@
             :header="header"
     >
         <template v-slot:form>
-            <form @submit.prevent="handleSubmit">
+            <form class="text-center" @submit.prevent="handleSubmit">
                 <input
                 v-model="newPost"
-                class="border-2" type="text" placeholder="add new post"/>
+                class="border-2 p-2 rounded-lg mt-2" type="text" placeholder="add a new post"/><br/>
 
-                <button class="border-2 ">Add new Post</button>
+                <button class="border-2  mt-5 p-2 rounded-lg text-white bg-red-700 ">Add new Post</button>
             </form>
         </template>
     </Modal>   

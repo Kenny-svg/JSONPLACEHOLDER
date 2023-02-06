@@ -1,6 +1,6 @@
 <template>
-    <v-paginator :page="page" @update="updateRes">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full" >
+   
+    <div class="" >
        <div class=" flex bg-white shadow-2xl border-2">
         <div class=" text-center mx-auto">
             <p class="text-center">{{ album.id }}</p>
@@ -21,8 +21,9 @@
         </div>
 
        </div>
+      
     </div>    
-    </v-paginator>
+
 
 
     <div v-if="showModal">
@@ -32,13 +33,13 @@
             :header="header"
     >
         <template v-slot:form>
-            <form @submit.prevent="editAlbums">
+            <form class="text-center" @submit.prevent="editAlbums">
                 <input
                 
                 v-model="album.title"
-                class="border-2" type="text" placeholder="edit album"/>
+                class="border-2 p-2 rounded-lg mt-2" type="text" placeholder="edit album"/><br />
 
-                <button class="border-2">edit Album</button>
+                <button class="border-2  mt-5 p-2 rounded-lg text-white bg-red-700">edit Album</button>
             </form>
         </template>
     </Modal>  
@@ -50,30 +51,27 @@
 <script>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
-import { useAlbumStore } from '../../store/AlbumStore';
+import { useAlbumStore, } from '../../store/AlbumStore';
 import Modal from '../utilities/Modal.vue';
 import { reactive, computed } from 'vue';
-import {VuePaginator} from 'vuejs-paginator'
 
 
 export default {
     props: ['album'],
-    components: {Modal, Vpaginator: VuePaginator },
+    components: {Modal,},
     setup() {
-       
 
         //from store
         const albumStore = useAlbumStore()
+ 
          //pagination
-        const page = albumStore.albums;
+ 
 
         //random images
         const images = ref([])
         //pagination
 
-        const  updateRes = (page) => {
-            albumStore.albums = page
-        }
+      
         onMounted(() => {
             for (let i = 0; i < 1; i++) {
              images.value.push( `https://picsum.photos/200/300?random=${Math.floor(Math.random() * 1000)}`)
@@ -117,7 +115,7 @@ export default {
          }
         }
         
-        return { albumStore, editAlbums, toggleModal,images, header, showModal, updateRes, page}
+        return { albumStore, editAlbums, toggleModal,images, header, showModal,  }
         
         }
 

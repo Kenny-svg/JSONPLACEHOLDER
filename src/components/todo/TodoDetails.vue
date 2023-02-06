@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4" >
+    <div class="" >
            <div class="bg-white shadow-2xl border-2 text-center">
             <div class="flex justify-between mt-2 mb-2 m-5">
             <svg  @click="toggleModal"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 p-2 rounded-full cursor-pointer bg-red-600 text-white">
@@ -13,8 +13,17 @@
             </div>
             
                 <h3>{{ todo.title }}</h3>
-                <p v-if="todo.completed"> completed</p>
-                <div v-else>not completed</div>
+                <div class="flex justify-center">
+                    <p class="flex" v-if="todo.completed"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white bg-black rounded-full text-center">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                </svg><span class="ml-2 mb-5">Completed</span>
+                </p>
+                <div class="flex mb-5" v-else><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-center">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                </svg><span class="ml-2">Not Completed</span>
+                </div>
+                </div>
+
            </div>
         </div>
 
@@ -25,13 +34,13 @@
             :header="header"
     >
         <template v-slot:form>
-            <form @submit.prevent="editTodos">
+            <form @submit.prevent="editTodos" class="text-center">
                 <input
                 
                 v-model="todo.title"
-                class="border-2" type="text" placeholder="edit todo"/>
+                class="border-2 p-2 rounded-lg mt-2" type="text" placeholder="edit todo"/><br />
 
-                <button class="border-2">edit todo</button>
+                <button class="border-2 mt-5 p-2 rounded-lg text-white bg-red-700 ">Edit todo</button>
             </form>
         </template>
     </Modal>  

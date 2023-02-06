@@ -1,5 +1,5 @@
 <template>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4" >
+<div class="" >
        <div class="bg-white shadow-2xl border-2">
         <div class="flex justify-between mt-2 m-5 mb-2">
             <svg  @click="toggleModal"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 p-2 rounded-full cursor-pointer bg-red-600 text-white">
@@ -24,13 +24,13 @@
             :header="header"
     >
         <template v-slot:form>
-            <form @submit.prevent="editPhotos">
+            <form class="text-center" @submit.prevent="editPhotos">
                 <input
                 
                 v-model="photo.title"
-                class="border-2" type="text" placeholder="edit photo"/>
+                class="border-2 p-2 rounded-lg mt-2" type="text" placeholder="edit photo"/><br />
 
-                <button class="border-2">edit photo</button>
+                <button class="border-2  mt-5 p-2 rounded-lg text-white bg-red-700">edit photo</button>
             </form>
         </template>
     </Modal>  

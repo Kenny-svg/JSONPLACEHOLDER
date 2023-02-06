@@ -15,22 +15,22 @@
   <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
     <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg   md:flex-row md:space-x-24 md:mt-0 md:text-xl  md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
       <li>
-        <router-link :class="{'active': $route.path === '/albums'}" to="/albums" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 hover:text-black md:hover:bg-transparent text-white md:dark:hover:text-whitemd:bg-transparent md:text-white md:p-0 dark:text-white" aria-current="page">Albums</router-link>
+        <router-link :class="{'active': $route.path === '/albums'}" to="/albums" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 hover:text-red-500 md:hover:bg-transparent text-white md:dark:hover:text-whitemd:bg-transparent md:text-white md:p-0 dark:text-white" aria-current="page">Albums</router-link>
       </li>
       <li>
-        <router-link :class="{'active': $route.path === '/comments'}" to="/comments" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 hover:text-black md:hover:bg-transparent text-white md:dark:hover:text-whitemd:bg-transparent md:text-white md:p-0 dark:text-white">Comments</router-link>
+        <router-link :class="{'active': $route.path === '/comments'}" to="/comments" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 hover:text-red-500 md:hover:bg-transparent text-white md:dark:hover:text-white md:bg-transparent md:text-white md:p-0 dark:text-white">Comments</router-link>
       </li>
       <li>
-        <router-link :class="{'active': $route.path === '/photos'}" to="/photos" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 hover:text-black md:hover:bg-transparent text-white md:dark:hover:text-whitemd:bg-transparent md:text-white md:p-0 dark:text-white">Photos</router-link>
+        <router-link :class="{'active': $route.path === '/photos'}" to="/photos" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 hover:text-red-500 md:hover:bg-transparent text-white md:dark:hover:text-whitemd:bg-transparent md:text-white md:p-0 dark:text-white">Photos</router-link>
       </li>
       <li>
-        <router-link :class="{'active': $route.path === '/posts'}" to="/posts" class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Posts</router-link>
+        <router-link :class="{'active': $route.path === '/posts'}" to="/posts" class="block py-2 pl-3 pr-4 text-white rounded hover:text-red-500 hover:bg-gray-100 md:hover:bg-transparent  md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Posts</router-link>
       </li>
       <li>
-        <router-link :class="{'active': $route.path === '/todos'}" to="/todos" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 hover:text-black md:hover:bg-transparent text-white md:dark:hover:text-whitemd:bg-transparent md:text-white md:p-0 dark:text-white">Todos</router-link>
+        <router-link :class="{'active': $route.path === '/todos'}" to="/todos" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 hover:text-red-500 md:hover:bg-transparent text-white md:dark:hover:text-whitemd:bg-transparent md:text-white md:p-0 dark:text-white">Todos</router-link>
       </li>
       <li>
-        <router-link :class="{'active': $route.path === '/users'}" to="/users" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 hover:text-black md:hover:bg-transparent text-white md:dark:hover:text-whitemd:bg-transparent md:text-white md:p-0 dark:text-white">Users</router-link>
+        <router-link :class="{'active': $route.path === '/users'}" to="/users" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 hover:text-red-500 md:hover:bg-transparent text-white md:dark:hover:text-whitemd:bg-transparent md:text-white md:p-0 dark:text-white">Users</router-link>
       </li>
     </ul>
   </div>

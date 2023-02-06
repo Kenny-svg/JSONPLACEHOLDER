@@ -8,26 +8,26 @@
             <form @submit.prevent="handleSubmit">
                 <input
                 v-model="newUser"
-                class="border-2" type="text" placeholder="add new user"/>
+                class="border-2  p-2 rounded-lg mt-2" type="text" placeholder="add new user"/><br />
 
                 <input
                 v-model="newEmail"
-                class="border-2" type="email" placeholder="add new email"/>
+                class="border-2  p-2 rounded-lg mt-2" type="email" placeholder="add new email"/><br />
 
                 <input
                 v-model="newUserName"
-                class="border-2" type="text" placeholder="add new username"/>
+                class="border-2  p-2 rounded-lg mt-2" type="text" placeholder="add new username"/><br />
 
                 <input
                 v-model="newPhone"
-                class="border-2" type="num" placeholder="add new phone"/>
+                class="border-2  p-2 rounded-lg mt-2" type="num" placeholder="add new phone"/><br />
 
                 <input
                 v-model="newWeb"
-                class="border-2" type="url" placeholder="add new website"/>
+                class="border-2 p-2 rounded-lg mt-2" type="url" placeholder="add new website"/><br />
 
 
-                <button class="border-2 ">Add new user</button>
+                <button class="border-2  mt-5 p-2 rounded-lg text-white bg-red-700 ">Add new user</button>
             </form>
         </template>
     </Modal>   
