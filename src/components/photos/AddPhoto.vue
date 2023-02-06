@@ -27,7 +27,7 @@
 </template>
 <script>
 import Modal from '../utilities/Modal.vue';
-import { usePhotoStore } from '../../store/photoStore';
+import { usePhotoStore } from '../../store/PhotoStore';
 import { ref } from '@vue/reactivity';
 
 
